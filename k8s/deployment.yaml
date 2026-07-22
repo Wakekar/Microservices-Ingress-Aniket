@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: techsolutions
-        image: Aniket/techsolutions-app:latest
+        image: aniketwakekar/techsolutions-app:latest
         ports:
         - containerPort: 80
         resources:
