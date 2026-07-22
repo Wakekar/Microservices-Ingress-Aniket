@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_HUB_REPO = 'aniketwakekar/techsolutions-app'
-        K8S_CLUSTER_NAME = 'aniket-cluster'
+        K8S_CLUSTER_NAME = 'Aniket-cluster'
         AWS_REGION = 'ap-south-1'
         NAMESPACE = 'default'
         APP_NAME = 'techsolutions'
