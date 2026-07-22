@@ -56,29 +56,43 @@ Kubernetes NodePort service range.
 Step 2: Tools Installation
 ===================
 2.1.1 Connect to the Ingress Server
+
 vi Jenkins.sh ----> Paste the below content ---->
+***********************************************************************************************************************
 
 #!/bin/bash
-# Update system
+
+# Update the Debian apt repositories, install OpenJDK 21
+
 sudo apt update -y
-# Install dependencies
-sudo apt install -y fontconfig openjdk-17-jre-headless wget gnupg2
-# Download and add the Jenkins GPG key
-wget -O- https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | \\
-    gpg --dearmor | sudo tee /usr/share/keyrings/jenkins-keyring.gpg > /dev/null
-# Add Jenkins repository
-echo "deb \[signed-by=/usr/share/keyrings/jenkins-keyring.gpg] https://pkg.jenkins.io/debian-stable binary/" | \\
-    sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null
-# Update package lists
+sudo apt install fontconfig openjdk-21-jre -y
+java -version
+
+# A LTS (Long-Term Support) release is chosen 
+
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
 sudo apt update -y
-# Install Jenkins
 sudo apt install jenkins -y
-# Start Jenkins
-sudo systemctl start jenkins
+
+# Enable the Jenkins service to start at boot 
+
 sudo systemctl enable jenkins
-# Print status
+
+# Start the Jenkins service
+
+sudo systemctl start jenkins
+
+# Check the status of the Jenkins service 
+
 sudo systemctl status jenkins
 
+
+
+***********************************************************************************************************************
 ----> esc ----> :wq ----> sudo chmod +x jenkins.sh ----> ./jenkins.sh
 
 Open Port 8080 in Jenkins server
