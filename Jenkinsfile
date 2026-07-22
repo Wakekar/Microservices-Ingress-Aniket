@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
+                deleteDir()
                 git 'https://github.com/Wakekar/Microservices-Ingress-Aniket.git'
             }
         }
