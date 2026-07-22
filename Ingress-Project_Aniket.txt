@@ -289,9 +289,31 @@ echo "======================================"
 4.6. Install EKS CTL (used to create EKS Cluster)
 
 ***********************************************************************************************************************
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl\_$(uname -s)\_amd64.tar.gz" | tar xz -C /tmp
-sudo mv /tmp/eksctl /usr/local/bin
+
+
+#!/bin/bash
+
+set -e
+
+echo "======================================"
+echo " eksctl Installation Started"
+echo "======================================"
+
+# Download latest eksctl
+curl --silent --location \
+"https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" \
+| tar xz -C /tmp
+
+# Move binary
+sudo mv /tmp/eksctl /usr/local/bin/
+
+# Verify installation
 eksctl version
+
+echo "======================================"
+echo " eksctl Installed Successfully"
+echo "======================================"
+
 
 **********************************************************************************************************************
 4.7. Create EKS Cluster
