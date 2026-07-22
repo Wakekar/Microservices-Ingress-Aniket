@@ -319,10 +319,14 @@ echo "======================================"
 4.7. Create EKS Cluster
 eksctl create cluster --name Aniket-cluster --region ap-south-1 --node-type c7i-flex.large --zones ap-south-1a,ap-south-1b
 
+************************************************************************************************************************
 4.8. Modifying the permissions
+
 sudo usermod -aG docker jenkins
 sudo systemctl restart docker
 sudo systemctl restart jenkins
+
+***********************************************************************************************************************
 
 4.9. Installation of Ingress Controller
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.10.1/deploy/static/provider/aws/deploy.yaml
