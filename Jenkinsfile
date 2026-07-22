@@ -13,7 +13,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 deleteDir()
-                git 'https://github.com/Wakekar/Microservices-Ingress-Aniket.git'
+                git branch: 'Feature-1', url: 'https://github.com/Wakekar/Microservices-Ingress-Aniket.git'
             }
         }
 
