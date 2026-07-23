@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         DOCKER_HUB_REPO = 'aniketwakekar/techsolutions-app'
-        K8S_CLUSTER_NAME = 'aniket-cluster'
+        K8S_CLUSTER_NAME = 'Aniket-cluster'
         AWS_REGION = 'ap-south-1'
         NAMESPACE = 'default'
         APP_NAME = 'techsolutions'
@@ -12,8 +12,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
-                git 'https://github.com/KastroVKiran/microservices-ingress.git'
+                deleteDir()
+                git branch: 'Feature-1', url: 'https://github.com/Wakekar/Microservices-Ingress-Aniket.git'
             }
         }
 
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 echo 'Pushing Docker image to DockerHub...'
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dockerhub-credentials', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                         sh "echo \${DOCKER_PASSWORD} | docker login -u \${DOCKER_USERNAME} --password-stdin"
                         sh "docker push ${DOCKER_HUB_REPO}:${env.IMAGE_TAG}"
                         sh "docker push ${DOCKER_HUB_REPO}:latest"
@@ -65,7 +65,9 @@ pipeline {
                 echo 'Deploying application to Kubernetes...'
                 script {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-creds']]) {
-                        sh "sed -i 's|Aniket/techsolutions-app:latest|Aniket/techsolutions-app:${env.IMAGE_TAG}|g' k8s/deployment.yaml"
+                        sh """
+                        sed -i "s|image:.*|image: ${DOCKER_HUB_REPO}:${env.IMAGE_TAG}|g" k8s/deployment.yaml
+                        """
                         sh "kubectl apply -f k8s/deployment.yaml"
                         sh "kubectl rollout status deployment/${APP_NAME}-deployment --timeout=300s"
                         sh "kubectl get pods -l app=${APP_NAME}"
