@@ -25,106 +25,68 @@ This project demonstrates a production-grade deployment of a multi-page web appl
 | GitOps          | ![ArgoCD](https://img.shields.io/badge/ArgoCD-EF7B4D?style=flat&logo=argo&logoColor=white) |
 
 
-# 📸 Project Screenshots
-
-## 🌐 Application
+## 📸 Project Screenshots
 
 ### 1. Application Landing Page
-![Application Landing Page](images/01_Application_Landing_Page.png)
+![Application Landing Page](Screenshots/01_Application_Landing_Page.png)
 
 ### 2. About Page
-![About Page](images/02_Application_About_Page.png)
+![About Page](Screenshots/02_Application_about_page.png)
 
 ### 3. Module Page
-![Module Page](images/03_Application_Module_Page.png)
+![Module Page](Screenshots/03_Application_module_page.png)
 
 ### 4. Contact Page
-![Contact Page](images/04_Application_Contact_Page.png)
+![Contact Page](Screenshots/04_Application_Contact_Page.png)
 
-### 5. WhatsApp Group Integration
-![WhatsApp Group](images/05_Application_WhatsApp_Group_Link.png)
+### 5. WhatsApp Group Link
+![WhatsApp Group Link](Screenshots/05_Application_Whats_app_Group_Link.png)
 
----
-
-# ☁️ AWS Infrastructure
-
-### 6. Ingress EC2 Instance
-![Ingress Server](images/06_Instance_Ingress_Server.png)
+### 6. Ingress Server Instance
+![Ingress Server Instance](Screenshots/06_Instance_Ingress_Server.png)
 
 ### 7. Security Group Inbound Rules
-![Inbound Rules](images/07_Inbound_Rules.png)
-
----
-
-# ☸️ Amazon EKS Cluster
+![Inbound Rules](Screenshots/07_Inbound_Rules.png)
 
 ### 8. Amazon EKS Cluster
-![EKS Cluster](images/08_EKS_Cluster.png)
+![Amazon EKS Cluster](Screenshots/08_EKS_Cluster.png)
 
-### 9. Worker Nodes
-![Cluster](images/09_Cluster.png)
+### 9. Kubernetes Cluster
+![Kubernetes Cluster](Screenshots/09_Cluster.png)
 
----
+### 10. NGINX Ingress Controller Installed
+![Ingress Controller Installed](Screenshots/10_Ingress_Controller_installed.png)
 
-# 🌐 NGINX Ingress Controller
+### 11. Jenkins CI/CD Pipeline
+![CI/CD Pipeline](Screenshots/11_CI_CD_Pipeline.png)
 
-### 10. Ingress Controller Installation
-![Ingress Controller](images/10_Ingress_Controller_Installed.png)
+### 12. Successful Pipeline Execution
+![Pipeline Success](Screenshots/12_Pipeline_Success.png)
 
----
+### 13. Prometheus Monitoring
+![Prometheus](Screenshots/13_Prometheus.png)
 
-# 🔄 Jenkins CI/CD Pipeline
+### 14. Grafana Jenkins Dashboard
+![Grafana Jenkins Dashboard](Screenshots/14_Grafana_Jenkins_Dashboard.png)
 
-### 11. CI/CD Pipeline
-![CI/CD Pipeline](images/11_CI_CD_Pipeline.png)
+### 15. Grafana Jenkins Health Dashboard
+![Grafana Jenkins Health](Screenshots/15_Grafana_Jenkins_Health.png)
 
-### 12. Pipeline Success
-![Pipeline Success](images/12_Pipeline_Success.png)
+### 16. Grafana Node Exporter Dashboard
+![Grafana Node Exporter Dashboard](Screenshots/16_Grafana_Node_Exporter_Dashboard.png)
 
----
+### 17. ArgoCD Application
+![ArgoCD Application](Screenshots/17_ArgoCD_Application_Tile.png)
 
-# 🚀 ArgoCD GitOps Deployment
+### 18. ArgoCD Deployment Pipeline
+![ArgoCD Pipeline](Screenshots/18_Argo_CD_Pipeline.png)
 
-### 13. ArgoCD Application
-![ArgoCD Application](images/17_ArgoCD_Application_Tile.png)
+### 19. Ingress Load Balancer URL
+![Ingress Load Balancer URL](Screenshots/19_Ingress_LB_URL.png)
 
-### 14. ArgoCD Deployment Pipeline
-![ArgoCD Pipeline](images/18_ArgoCD_Pipeline.png)
+### 20. Kubernetes Pods
+![Kubernetes Pods](Screenshots/20_Pods.png)
 
----
-
-# 📊 Monitoring
-
-### 15. Prometheus
-![Prometheus](images/13_Prometheus.png)
-
-### 16. Grafana Jenkins Dashboard
-![Grafana Jenkins Dashboard](images/14_Grafana_Jenkins_Dashboard.png)
-
-### 17. Grafana Jenkins Health
-![Grafana Jenkins Health](images/15_Grafana_Jenkins_Health.png)
-
-### 18. Grafana Node Exporter Dashboard
-![Node Exporter Dashboard](images/16_Grafana_Node_Exporter_Dashboard.png)
-
----
-
-# 🌍 Load Balancer
-
-### 19. AWS Load Balancer URL
-![Ingress Load Balancer](images/19_Ingress_LB_URL.png)
-
----
-
-# 📦 Kubernetes Pods
-
-### 20. Running Pods
-![Running Pods](images/20_Pods.png)
-
----
-
-# 💻 Terminal Verification
-
-### 21. ArgoCD Deployment Output
-![Terminal Output](images/21_ArgoCD_Output_Terminal.png)
+### 21. ArgoCD Terminal Output
+![ArgoCD Terminal Output](Screenshots/21_ArgoCD_output_terminal.png)
 
